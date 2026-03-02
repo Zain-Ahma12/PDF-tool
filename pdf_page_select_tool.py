@@ -112,9 +112,6 @@ def extract_pages(input_path: str, pages: list, output_path: str = "final_proces
     source_pdf.close() # Close the source PDF file
     
     print(f"Successfully extracted {len(page_numbers)} page(s) from {input_path} to {final_path}")
-    
-    
-    if __name__ == "__main__":
         pages = [
     "11-15",
     "22",
