@@ -27,7 +27,7 @@ Ensure you have Python 3.7 or later installed on your system.
 
 2. **Create a virtual environment** (recommended):
    ```bash
-   python -m venv vir_env
+   uv venv vir_env
    ```
 
 3. **Activate the virtual environment**:
@@ -40,9 +40,9 @@ Ensure you have Python 3.7 or later installed on your system.
      source vir_env/bin/activate
      ```
 
-4. **Install PyMuPDF**:
+4. **Installing dependencies**:
    ```bash
-   pip install PyMuPDF
+   uv pip install requirements.txt
    ```
 
 ## Project Structure
@@ -207,7 +207,7 @@ Remove unwanted pages (advertisements, blank pages, etc.) by specifying only des
 ### Issue: "ModuleNotFoundError: No module named 'fitz'"
 **Solution**: Ensure PyMuPDF is installed
 ```bash
-pip install PyMuPDF
+uv pip install PyMuPDF
 ```
 
 ### Issue: "FileNotFoundError" for input PDF
