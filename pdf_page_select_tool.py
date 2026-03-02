@@ -11,7 +11,7 @@ def extract_pages(input_path: str, pages: list, output_path: str = "final_proces
     -pages            : List of pages number/ranges (1-based, e.g. ["417", "456-611"]).
                         Can be unsorted - the function will sort it automatically.
     - output_path (str): Output filename (default: final_processed.pdf).
-                         Saved to 'Output/' on success, or 'Partial processed pdf/' on error.
+                        Saved to 'Output/' on success, or 'Partial processed pdf/' on error.
     
     ---
     Output:
@@ -91,10 +91,10 @@ def extract_pages(input_path: str, pages: list, output_path: str = "final_proces
             partial_path = os.path.join(partial_dir, output_path) # Build the partial output path
             pages_saved = len(output_pdf)
             if pages_saved > 0:
-                output_pdf.save(partial_path) # Save the partial output PDF
-            output_pdf.save(partial_path) # Save the partial output PDF
-            source_pdf.close() # Close the source PDF file
-            output_pdf.close() # Close the output PDF file
+                output_pdf.save(partial_path)           # Save the partial output PDF
+            output_pdf.save(partial_path)               # Save the partial output PDF
+            source_pdf.close()                          # Close the source PDF file
+            output_pdf.close()                          # Close the output PDF file
             
             original_entry = find_original_entry(page_num) # Find the original entry that caused the error
             raise ValueError(
@@ -107,8 +107,8 @@ def extract_pages(input_path: str, pages: list, output_path: str = "final_proces
         
     final_path = os.path.join(output_dir, output_path) # Build the full path for the final output PDF file
     
-    output_pdf.save(final_path) # Save the final output PDF file
-    output_pdf.close() # Close the output PDF file
-    source_pdf.close() # Close the source PDF file
+    output_pdf.save(final_path)     # Save the final output PDF file
+    output_pdf.close()              # Close the output PDF file
+    source_pdf.close()              # Close the source PDF file
     
     print(f"Successfully extracted {len(page_numbers)} page(s) from {input_path} to {final_path}")
